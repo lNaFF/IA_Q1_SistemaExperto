@@ -95,6 +95,15 @@
       (moto "AKT NKD 125")
       (razon "Moto económica, ligera y fácil de mantener, perfecta para trayectos urbanos cortos."))))
 
+(defrule moto2-economia-bajo-principiante-urbano-naked-bajo
+   (usuario (nombre ?nombre) (presupuesto Bajo) (experiencia Principiante) (uso Urbano) (estilo Naked) (cilindraje Bajo) (preferencia Economía))
+   =>
+   (assert (regla-activa (nombre moto2-economia-bajo-principiante-urbano-naked-bajo)))
+   (assert (recomendacion
+      (nombre ?nombre)
+      (moto "Susuki AX4")
+      (razon "Moto económica, ligera y fácil de mantener, perfecta para trayectos urbanos cortos."))))
+
 (defrule moto-comodidad-medio-principiante-urbano-automatica-bajo
    (usuario (nombre ?nombre) (presupuesto Medio) (experiencia Principiante) (uso Urbano) (estilo Automática) (cilindraje Bajo) (preferencia Comodidad))
    =>
@@ -139,3 +148,12 @@
       (nombre ?nombre)
       (moto "Honda NAVI")
       (razon "Moto compacta y económica, ideal para ciudad. Combina la practicidad de un scooter con diseño de moto, perfecta para principiantes que buscan economía y facilidad de manejo."))))
+
+(defrule moto-ppto-alto
+   (usuario (nombre ?nombre) (presupuesto Alto))
+   =>
+   (assert (regla-activa (nombre moto-ppto-alto)))
+   (assert (recomendacion
+      (nombre ?nombre)
+      (moto "")
+      (razon "Puedes centrarte en modelos de alta cilindrada o deportivos, priorizando la calidad, seguridad y tecnología avanzada, como sistemas de control de tracción y frenos ABS. Considera motores de más de 500cc para mayor potencia y rendimiento"))))
